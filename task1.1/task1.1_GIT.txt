@@ -1,0 +1,20 @@
+16928ba (HEAD -> master, origin/master, origin/develop, develop) HEAD@{0}: checkout: moving from styles to master
+b338ed4 (origin/styles, styles) HEAD@{1}: checkout: moving from master to styles
+16928ba (HEAD -> master, origin/master, origin/develop, develop) HEAD@{2}: checkout: moving from styles to master
+b338ed4 (origin/styles, styles) HEAD@{3}: checkout: moving from master to styles
+16928ba (HEAD -> master, origin/master, origin/develop, develop) HEAD@{4}: merge develop: Fast-forward
+8168d0c HEAD@{5}: checkout: moving from develop to master
+16928ba (HEAD -> master, origin/master, origin/develop, develop) HEAD@{6}: commit (merge): Merge branch 'styles' into develop
+d73627a (origin/images, images) HEAD@{7}: merge images: Fast-forward
+4a0dcaf HEAD@{8}: checkout: moving from styles to develop
+b338ed4 (origin/styles, styles) HEAD@{9}: commit: styles
+1e21075 HEAD@{10}: commit: added styles directory
+4a0dcaf HEAD@{11}: checkout: moving from develop to styles
+4a0dcaf HEAD@{12}: checkout: moving from images to develop
+d73627a (origin/images, images) HEAD@{13}: commit: added a picture
+4bc8b10 HEAD@{14}: commit: add image folder with test image
+4a0dcaf HEAD@{15}: checkout: moving from develop to images
+4a0dcaf HEAD@{16}: commit: created index.html
+8168d0c HEAD@{17}: checkout: moving from master to develop
+8168d0c HEAD@{18}: commit (initial): readme.txt
+
