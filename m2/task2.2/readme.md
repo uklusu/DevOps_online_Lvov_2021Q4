@@ -14,7 +14,7 @@ AWS Lightsail
 ![test3](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m2/task2.2/image/aws1.png?raw=true)
 
 and a lot others of AWS services, also all aws free quicklabs   
-![test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m2/task2.2/image/aws5.png?raw=true)
+![test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m2/task2.2/image/disk5.png?raw=true)
 Introduction to Amazon DynamoDB   
 Introduction to AWS Identity and Access Management (IAM)   
 Introduction to Amazon Elastic Block Store (Amazon EBS)   
