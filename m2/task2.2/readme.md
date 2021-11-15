@@ -17,3 +17,4 @@ Introduction to Amazon Elastic Block Store (Amazon EBS)
 Introduction to Amazon CloudFront
 Introduction to Amazon Simple Storage Service (S3)
 also waste 40 dollars to try some interesting functions with database and some others
+![121](DevOps_online_Lvov_2021Q4/m2/task2.2/image/aws 6.png "6")
