@@ -48,24 +48,24 @@ V - display processes as tree
 and many many others...
 13) for sorting press shift+f and just chose what sorting u need with S button after that press enter . 
 
-[test7](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/7.png?raw=true)
+![test7](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/7.png?raw=true)
 
 
-[test8](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/8.png?raw=true)
+![test8](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/8.png?raw=true)
 
 14) process prio -  is how many CPU time will be given for process compared to others, it have value frome 19 to -20. example of command  nice -n 17 processname. Or renice via PID,  sudo renice -n5 -p 455332
 15) we can change process prio with top via r key, then type PID and value.
 16)we can kill process with "kill" comand using kill PID. kill -L to list all signals that can be send via kill comand. u can send it by adding number or name of signal to kill comand like " kill -9 1211" to send kill signal to PID 1211. or "kill -KILL 1211" or "kill -SIGKILL 1211"
 17) jobs command can show u what comands exist in current session. fg bring stopped comand frome background to foreground. bg do oposite thing.  nohup - run a command immune to hangups, with output to a non-tty. 
 
-[test9](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/9.png?raw=true)
+![test9](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/9.png?raw=true)
 
 Part 2
 1) in ms Windows u can following comand in ssh ssh user@host - to conect to remote host via ssh .  ssh-keygen to generate keygen
 
 ssh-keygen - for generating ssh key
 
-[test10](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/10.png?raw=true)
+![test10](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/10.png?raw=true)
 
 2) to increase security we can use strong passwords, use Private keys for Authentification, disable Root Logins, also change port to nonstandart.
 3) there is such options for key encript : rsa ,dsa,ecdsa,ecdsa-sk,ed25519. we can use them by adding -t encryptname. like ssh-keygen -t dsa  or ssh-keygen -t ed25519
