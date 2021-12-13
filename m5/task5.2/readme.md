@@ -2,7 +2,7 @@
 
 2)Os know users by UID(user identifier)  superuser always has 0 ,it saves in passwd file,so to define it just cat  /etc/passwd or use comand "id -u " to find the UID for a particular user . Most Linux distributions reserve the first 100 UIDs for system use New users are assigned UIDs starting from 500 or 1000. For example, new users in Ubuntu start from 1000.  
 
-[test1]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
+![test1]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
 
 3) GID -group ID , Type the command "id -g " to find the primary GID for a particular user.  Type the command "id -G " to list all the GIDs for a particular user. Replace "" with the user's Unix or Linux username. 1 
 
