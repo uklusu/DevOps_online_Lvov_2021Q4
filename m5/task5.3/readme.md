@@ -1,31 +1,31 @@
 1) linux process can have such status as : Running (R ,Stopped (T),Interruptable sleep (D, Uninterruptable sleep(S), Zombie(Z). to see all proceses u need to type * Ps -aux *
 2)pstree comand display a tree of proccess 
 
-[test1](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/1.png?raw=true)
+![test1](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.3/image/1.png?raw=true)
 
 3) Proc file system (procfs) is virtual file system created on fly when system boots and is dissolved at time of system shut down.
 It contains useful information about the processes that are currently running, it is regarded as control and information center for kernel.
 The proc file system also provides communication medium between kernel space and user space.
 4)lscpu to get info about cpu    
 
-[test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/2.png?raw=true)
+![test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/2.png?raw=true)
 
 5)ps -au to get all info about proceses for curent user
 
-[test3](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/3.png?raw=true)
+![test3](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/3.png?raw=true)
 
 6) kernel process = system process,usualy have id=2 we can see it with comand sudo pstree2,This is all processes frome kthreadd. all others procceses gona be userproc ,we can print it with ps -N --ppid=2 --pid=2 comand.
 
 
 7) ps -aux to print all processes , 
 
-[test5](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/5.png?raw=true)
+![test5](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/5.png?raw=true)
 
 8) to list processes only for specific user u can use ps =au *username*
 9) to analyse existing running tasks we can use pgrep, pstree, top, proc
 10)The  top  program  provides  a dynamic real-time view of a running system.  It can display system summary information as well as a list of processes or threads currently being managed by the Linux kernel.  The types of system summary information shown and the types, order and size of information displayed for processes are all user configurable and that configuration can be made persistent across restarts. 
 
-[test6](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/6.png?raw=true)
+![test6](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/6.png?raw=true)
 
 11) to display "top" command for a specific user just add -u key with username ex. top -u uklusu
 12) there is such interactive comands as

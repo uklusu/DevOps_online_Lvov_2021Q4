@@ -22,16 +22,16 @@ open the sudoers configuration file with *sudo visudo*, and add the following li
 
 11)to Display the extended format of information about the directory just type ls -F, and u can see rights for users (rwx) owner,date of last change,amount of hardlinks,weight  
 
-[test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/2.png?raw=true)
+![test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/2.png?raw=true)
 
 12) there is access rights like Read Write and eXecute, they not same for owner,group of owner and others.
 13) just type stat *filename* to know owner,group of owner and access rights.
 14) for changing owner of file simply use chown,and for changing access mode use chmod comand with options, 
-[test3]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/3.png?raw=true)
+![test3]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/3.png?raw=true)
 
 15)  octal representation of access rights mean that access right will be shown as numbers where X=1 W=2 R=4 . to see access right as octal representation just type, stat *filename* 
 0777 mean full access for everyone (-rwxrwxrwx)  0744 mean that owner can do anything and others only read. Umask show standart access rights for new file, if umask 0002 than file will have 0775 (-rwxrwxrw-)
 16)u can add or delete sticky bit with chmod +t ,sticky bit block deleting of file frome everyone exept SU or owner.to delete sticky bit use chmod -t ,example -rwxr-xr-t. As octal stickybit =1 example -rwxr-xr-t
 17)  u need to have R attribute in comand script to run it via bash. Or X to run as sudo. Or RX if just run 
 
-[test4](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/4.png?raw=true)
+![test4](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/4.png?raw=true)
