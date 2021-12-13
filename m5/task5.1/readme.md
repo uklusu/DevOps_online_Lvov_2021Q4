@@ -15,11 +15,7 @@
 ## Part2 
 1)  u cant type "sudo tree root -l 2" for listing root directories and subdirectories up to 2nd level
 for listing files with some symbols in name u can use -P or -I key  
-
-
 ![test3]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.1/image/5.png?raw=true)
-
-
 ![test4]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.1/image/4.png?raw=true)
 
 2) to determine type of file simply use file comand  
