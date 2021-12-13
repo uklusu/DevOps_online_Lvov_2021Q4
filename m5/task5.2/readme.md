@@ -2,11 +2,11 @@
 
 2)Os know users by UID(user identifier)  superuser always has 0 ,it saves in passwd file,so to define it just cat  /etc/passwd or use comand "id -u " to find the UID for a particular user . Most Linux distributions reserve the first 100 UIDs for system use New users are assigned UIDs starting from 500 or 1000. For example, new users in Ubuntu start from 1000.  
 
-![test1]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
+![test1](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
 
 3) GID -group ID , Type the command "id -g " to find the primary GID for a particular user.  Type the command "id -G " to list all the GIDs for a particular user. Replace "" with the user's Unix or Linux username. 1 
 
-[test2]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
+[test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
 
 4)comand *groups* to determine belonging of user to group 1
 
@@ -22,7 +22,7 @@ open the sudoers configuration file with *sudo visudo*, and add the following li
 
 11)to Display the extended format of information about the directory just type ls -F, and u can see rights for users (rwx) owner,date of last change,amount of hardlinks,weight  
 
-[test2]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/2.png?raw=true)
+[test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/2.png?raw=true)
 
 12) there is access rights like Read Write and eXecute, they not same for owner,group of owner and others.
 13) just type stat *filename* to know owner,group of owner and access rights.
@@ -34,4 +34,4 @@ open the sudoers configuration file with *sudo visudo*, and add the following li
 16)u can add or delete sticky bit with chmod +t ,sticky bit block deleting of file frome everyone exept SU or owner.to delete sticky bit use chmod -t ,example -rwxr-xr-t. As octal stickybit =1 example -rwxr-xr-t
 17)  u need to have R attribute in comand script to run it via bash. Or X to run as sudo. Or RX if just run 
 
-[test4]http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/4.png?raw=true)
+[test4](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/4.png?raw=true)
