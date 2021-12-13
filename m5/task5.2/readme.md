@@ -6,7 +6,7 @@
 
 3) GID -group ID , Type the command "id -g " to find the primary GID for a particular user.  Type the command "id -G " to list all the GIDs for a particular user. Replace "" with the user's Unix or Linux username. 1 
 
-[test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
+![test2](http://github.com/uklusu/DevOps_online_Lvov_2021Q4/blob/master/m5/task5.2/image/1.png?raw=true)
 
 4)comand *groups* to determine belonging of user to group 1
 
