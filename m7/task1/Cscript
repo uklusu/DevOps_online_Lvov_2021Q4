@@ -1,0 +1,57 @@
+#!/bin/bash
+#this part check input
+if [[ "$#" == "0" ]]
+then
+          echo "example of using script ./Cscript [path to source folder] [path to destination folder]"
+          exit 0
+elif ! [[ -d $1 ]]
+then 
+          echo "source directory not exist "
+          exit 0
+          
+elif [[ -z $2 ]] 
+
+then
+          echo  "u must specify destination folder"
+          exit 0
+ elif ! [[ -d $2 ]]
+ then
+            echo "Destination directory is absent,trying to create $2 "
+            mkdir $2 
+            echo "directory $2 created "
+        fi
+        
+#Set parametrs 
+srcdir=$1
+dstdir=$2
+log=$dstdir/backup.log
+tmpdir=$dstdir/tmp
+if ! [[ -d $tmpdir ]] ; then
+ mkdir $tmpdir 
+ fi
+ touch $dstdir/backup.log
+ touch $tmpdir/ls.tmp;
+ touch $tmpdir/snapshot.tmp;
+ ls $srcdir > $tmpdir/ls.tmp
+ 
+ #logging part
+ 
+ dt=$(date '+%d.%m.%Y_%H:%M::%S');
+ for var1 in $(diff -y --suppress-common-lines $tmpdir/ls.tmp $tmpdir/snapshot.tmp | awk '{print $1 }' | sed 's/>//g; /^[[:space:]]*$/d')
+ do
+              echo "$dt CREATED $var1" >> $log
+              tar -rvf $dstdir/Backup.tar $srcdir/$var1 > /dev/null 
+              echo " $dt BACKUPED $var1 " >> $log
+              done
+              echo " Backuped "
+              
+              
+              for var2 in $(diff -y --suppress-common-lines $tmpdir/ls.tmp $tmpdir/snapshot.tmp | awk '{print $2 $3}' | sed 's/<//g; /^[[:space::]]*$/d; s/|//g')
+              do
+              
+              echo " $dt DELETED $var2" >> $log
+              done
+              
+              rm -rf $tmpdir/ls.tmp;
+              ls $srcdir > $tmpdir/snapshot.tmp
+              

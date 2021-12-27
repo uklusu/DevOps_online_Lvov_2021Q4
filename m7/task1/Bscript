@@ -1,0 +1,137 @@
+#!/bin/bash
+
+#show most popular ip
+function mip
+{
+             if [[ -z "$1" ]]
+             then
+                   echo  "please specify log file"
+                   exit 0
+
+             fi 
+             logname=$1       
+             awk '{ print $1}' $logname | sort | uniq -c | sort -nr | head -n 1 |   awk '{print " Most request was frome this ip: "  $2}'
+
+             
+}
+
+#show most popular page
+function pages
+{
+             if [[ -z "$1" ]]
+             then
+                   echo  "please specify log file"
+                   exit 0
+             elif [[ -z "$2" ]]
+             then
+                   echo "please specify amount of pages"
+                   
+                 exit 0
+             fi 
+             logname=$1       
+             echo "most $2 popular pages"
+             awk '{ print $7}' $logname | sort | uniq -c | sort -nr | head -n $2 | sed 's/\///g'
+}
+
+# show amount of requests frome each ip
+
+function popular
+{
+             if [[ -z "$1" ]]
+             then
+                   echo  "please specify log file"
+                   exit 0
+             elif [[ -z "$2" ]]
+             then
+                   echo "please specify ip amount"
+                   
+                 exit 0
+             fi 
+             logname=$1       
+             echo "was so much requests frome such ip "
+            awk '{ print $1}' $logname | sort | uniq -c | sort -nr | head -n $2 |   awk '{print " was "  $1 " requests frome ip: " $2}'
+
+}
+
+#show non existing pages that were refered to
+function er404
+{ 
+ if [[ -z "$1" ]]
+             then
+                   echo  "please specify log file"
+                   exit 0
+                   
+                 fi      
+                logname=$1    
+               echo  "list of non existing pages that were refered to"
+            awk '$9 == "404" { print $7 }' $logname | sort | uniq
+  }
+  
+  #this show What time did site get the most requests
+  function time
+{
+             if [[ -z "$1" ]]
+             then
+                   echo  "please specify log file"
+                   exit 0
+          
+
+             fi 
+             logname=$1       
+             echo "site"
+            awk '{ print $4 }' $logname | cut -d":" -f2,3 | uniq -c | sort -nr | head -1 | awk '{ print $2 }'
+}
+
+ function bot
+{
+             if [[ -z "$1" ]]
+             then
+                   echo  "please specify log file"
+                   exit 0
+          
+
+             fi 
+             logname=$1       
+             echo "such search bot have accesed the site"
+            cat $logname | awk '/bot/ {print $1, $12, $14, $15, $16}' | sort | uniq | awk '{print $1, $2, $3, $5}' | sort | uniq | sed 's/\"//g' 
+
+}
+
+#this show list of keys for script
+if [[ "$#" == "0" ]]
+
+   then
+         echo "u must use agrument name of script and amount of lines if needed [--argument] [filename] [number_of_lines]"
+         echo "to use this script u can use next arguments "
+         echo "to display frome which ip was most arguments use [--mip] [filename] "
+         echo "to display most popular page use --pages filename amount of pages"
+         echo "to show amount of request frome each ip use --popular filename amount of pages"
+         echo "to show show non existing pages that were refered to use --er404 filename "
+         echo "to  show what time did site get the most requests use --time filename"
+         echo "to show what search bot have accesed the site use --bot filename "
+         exit 0
+    fi
+         
+        # part of script where is cheking input parametrs
+        if [ "$1" == "--mip" ]
+        then 
+             mip $2
+             
+         elif [ "$1" == "--pages" ]
+         then 
+         pages $2 $3
+         
+         elif [ "$1" == "--popular" ]
+         then 
+         popular $2 $3
+         
+         elif [ "$1" == "--er404" ]   
+         then 
+                 er404 $2
+          elif [ "$1" == "--time" ]
+          then
+               time $2
+          elif [ "$1" == "--bot" ]
+          then
+          bot $2 $3
+         fi    

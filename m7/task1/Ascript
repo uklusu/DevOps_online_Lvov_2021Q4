@@ -1,0 +1,40 @@
+#!/bin/bash
+#this function list open tcp ports on host
+function portscan
+{
+         echo " next ports are open: "
+         ss -ant
+}
+# This function show ip and names at network
+function netscan
+{
+# check if NMAP installed
+test -e /usr/bin/nmap
+if [[ "$?" == "0" ]]
+then
+      echo "NMAP installed,scaning network"
+else
+      echo "trying to install NMAP"
+            sudo apt install nmap -y
+fi
+# perform scaning network with nmap
+           addr=$1
+           echo "next hosts being found in this network"
+           nmap -sP $addr | awk 'NR % 2 == 0 {print "Hostname:" $5 "   " "ip adress:" $6}' | sed 's/(//g; s/)//g'
+           }
+           # this part for showing keys when starting without parametrs
+if [[ "$#" == "0" ]]
+then 
+              echo " u can use such keys: "
+              echo "for displaying ip and names for all hosts in curent subnet use  --all" 
+              echo "for displaying list of open tcp ports use   --target net ip"
+              exit 0 
+fi 
+# part where script check input parametrs
+if [ "$1" == "--all" ]
+then
+       portscan 
+ elif [ "$1" == "--target" ]
+ then
+      netscan $2
+fi
