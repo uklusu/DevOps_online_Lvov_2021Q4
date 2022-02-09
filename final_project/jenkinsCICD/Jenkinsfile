@@ -1,0 +1,36 @@
+#!groovy
+pipeline {
+    agent any
+    triggers {
+        githubPush()
+      }
+    stages {
+        stage('sending files') {
+          environment {
+            IP_ADD =  sh(returnStdout: true, script: "cat /home/ubuntu/ip")
+          }
+            steps {
+
+                sh ''' #!/bin/bash
+                scp -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa $PWD/html ubuntu@$IP_ADD:/home/ubuntu
+                '''
+                echo "file transfer done"
+
+            }
+        }
+
+        stage('updating website') {
+
+            steps {
+              sh ''' #!/bin
+                ssh -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa  ubuntu@$IP_ADD sudo docker cp /home/ubuntu/file servs:/var/www/html/
+
+
+               '''
+
+          }
+        }
+
+        }
+    }
+}
