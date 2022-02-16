@@ -17,6 +17,9 @@ pipeline {
                 sudo chmod 777 pages/*
                 scp -r -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa $PWD/pages ubuntu@$IP_ADD:/home/ubuntu
                 scp -r -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa $PWD/pages ubuntu@$IP_PROD:/home/ubuntu
+                scp -r -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa $PWD/default.catalog ubuntu@$IP_ADD:/home/ubuntu
+                scp -r -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa $PWD/default.catalog ubuntu@$IP_PROD:/home/ubuntu
+
                 '''
                 echo "file transfer done"
 
@@ -31,7 +34,7 @@ pipeline {
             steps {
               sh ''' #!/bin
                 ssh -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa  ubuntu@$IP_ADD sudo docker cp /home/ubuntu/pages servs:/var/www/html
-
+                ssh -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa  ubuntu@$IP_ADD sudo docker cp /home/ubuntu/default.catalog servs:/var/www/html/includes/templates/
 
                '''
 
@@ -44,7 +47,7 @@ pipeline {
           }
             steps {
               sh '''  #!/bin
-              ssh  -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa  ubuntu@$IP_PROD echo "hello_hello"
+              ssh  -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa  ubuntu@$IP_PROD sudo docker cp /home/ubuntu/default.catalog servs:/var/www/html/includes/templates/
               ssh  -o StrictHostKeyChecking=no -i /home/ubuntu/id_rsa  ubuntu@$IP_PROD sudo docker cp /home/ubuntu/pages servs:/var/www/html
 
 
